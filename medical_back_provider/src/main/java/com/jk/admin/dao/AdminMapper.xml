@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.admin.dao.AdminMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.admin.pojo.Admin" >
+    <id column="admin_id" property="adminId" jdbcType="INTEGER" />
+    <result column="admin_name" property="adminMane" jdbcType="VARCHAR" />
+    <result column="admin_pwd" property="adminPwd" jdbcType="VARCHAR" />
+    <result column="admin_creation_time" property="adminCreationTime" jdbcType="DATE" />
+    <result column="admin_lv" property="adminLv" jdbcType="SMALLINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    admin_id, admin_name, admin_pwd, admin_creation_time, admin_lv
+  </sql>
+  <!-- 获取总信息条数 -->
+  <select id="getAdminTotal" resultType="java.lang.Long" parameterType="com.jk.admin.pojo.Admin" >
+    select count(0) from t_admin
+    where 1=1
+
+  </select>
+  <!-- 查询信息列表 -->
+  <select id="queryAdminShowList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_admin
+    where 1=1
+
+    limit #{start},#{pageSize}
+  </select>
+    <!--添加admin和角色表信息-->
+    <insert id="saveRolesOfAdmin">
+        insert into t_admin_role (admin_id, role_id) values
+        <foreach collection="list" item="id" separator="," >
+            (#{adminId},#{id})
+        </foreach>
+    </insert>
+  <select id="queryAdminInfoByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from t_admin
+    where admin_name = #{adminMane}
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_admin
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.admin.pojo.Admin" >
+    insert into t_admin (admin_id, admin_mane, admin_pwd, 
+      admin_creation_time)
+    values (#{adminId,jdbcType=INTEGER}, #{adminMane,jdbcType=VARCHAR}, #{adminPwd,jdbcType=VARCHAR}, 
+      #{adminCreationTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.admin.pojo.Admin" >
+    insert into t_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        admin_id,
+      </if>
+      <if test="adminMane != null" >
+        admin_mane,
+      </if>
+      <if test="adminPwd != null" >
+        admin_pwd,
+      </if>
+      <if test="adminCreationTime != null" >
+        admin_creation_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adminId != null" >
+        #{adminId,jdbcType=INTEGER},
+      </if>
+      <if test="adminMane != null" >
+        #{adminMane,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPwd != null" >
+        #{adminPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminCreationTime != null" >
+        #{adminCreationTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.admin.pojo.Admin" >
+    update t_admin
+    <set >
+      <if test="adminMane != null" >
+        admin_mane = #{adminMane,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPwd != null" >
+        admin_pwd = #{adminPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminCreationTime != null" >
+        admin_creation_time = #{adminCreationTime,jdbcType=DATE},
+      </if>
+    </set>
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.admin.pojo.Admin" >
+    update t_admin
+    set admin_mane = #{adminMane,jdbcType=VARCHAR},
+      admin_pwd = #{adminPwd,jdbcType=VARCHAR},
+      admin_creation_time = #{adminCreationTime,jdbcType=DATE}
+    where admin_id = #{adminId,jdbcType=INTEGER}
+  </update>
+</mapper>

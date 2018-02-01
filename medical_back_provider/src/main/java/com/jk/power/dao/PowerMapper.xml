@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jk.power.dao.PowerMapper" >
+  <resultMap id="BaseResultMap" type="com.jk.power.pojo.Power" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pid, text, url
+  </sql>
+  <!-- 根据roleId查询power信息 -->
+  <select id="queryPowerInfoByRoleId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    id, pid, text, url
+    from t_power as p,t_role_power as rp
+    where p.id = rp.power_id and rp.role_id = #{roleId}
+  </select>
+  <!-- 查询powerIds根据roleIds -->
+  <select id="queryPowerIdsByRoleIds" resultType="java.lang.Integer" parameterType="java.util.List">
+    select power_id AS id from t_role_power where role_id IN
+    <foreach collection="list" item="roleId" separator="," open="(" close=")">
+      #{roleId}
+    </foreach>
+  </select>
+  <!-- 查询powerIds根据roleIds -->
+  <select id="queryPowerListByIds" resultMap="BaseResultMap" parameterType="java.util.List">
+    select <include refid="Base_Column_List" /> from t_power where id IN
+    <foreach collection="list" item="id" separator="," open="(" close=")">
+      #{id}
+    </foreach>
+  </select>
+  <!-- 查询所有的权限 -->
+  <select id="queryPowerAllInfo" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_power
+  </select>
+  <delete id="deleteRolePowerInfo" parameterType="java.lang.Integer" >
+    delete from t_role_power
+    where power_id = #{id}
+  </delete>
+
+
+
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_power
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_power
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jk.power.pojo.Power" >
+    insert into t_power (id, pid, text, 
+      url)
+    values (#{id,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jk.power.pojo.Power" >
+    insert into t_power
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="text != null" >
+        text,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jk.power.pojo.Power" >
+    update t_power
+    <set >
+      <if test="pid != null" >
+        pid = #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jk.power.pojo.Power" >
+    update t_power
+    set pid = #{pid,jdbcType=INTEGER},
+      text = #{text,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
