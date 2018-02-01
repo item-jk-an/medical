@@ -1,0 +1,665 @@
+html, body {
+    font-family: "Microsoft YaHei";
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    background-color: #f7f7f7;
+}
+* {
+    margin: 0 auto;
+}
+select, textarea, input[type='text'], input[type='search'], input[type='password'], input[type='datetime'], input[type='datetime-local'], input[type='date'], input[type='month'], input[type='time'], input[type='week'], input[type='number'], input[type='email'], input[type='url'], input[type='tel'], input[type='color'] {
+    -webkit-user-select: text;
+    border-radius: 3px;
+    outline: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+#name::-ms-clear { display: none;}
+#name::-ms-reveal { display: none;}
+#password::-ms-clear { display: none;}
+#password::-ms-reveal { display: none;}
+#verify-input::-ms-clear { display: none;}
+#verify-input::-ms-reveal { display: none;}
+#phonenum::-ms-clear { display: none;}
+#phonenum::-ms-reveal { display: none;}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #999;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #999;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: #999;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #999;
+}
+.fl, .left {
+    float: left;
+}
+a, input, button {
+    border-radius: 4px;
+    border: none;
+    outline: 0;
+}
+.page{
+    width:100%;
+    height:100%;
+    background-color: #f7f7f7;
+}
+.page-bottom{
+    height: 32px;
+    line-height:32px;
+    color:#999;
+    font-size:12px;
+    width: 100%;
+    text-align:center;
+}
+.login-main{
+    width: 100%;
+    height: 636px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.login-content{
+    position: relative;
+    background: url("../../../images/pc/login/sz/login-bg.jpg") no-repeat;
+    background-position: 0px 30px;
+}
+.erweima-type{
+    overflow: hidden;
+}
+.login-win{
+    width:422px;
+    height:475px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:726px;
+    margin:auto;
+    margin-top: 50px;
+    border-radius:4px;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 0 18px #ccc;
+    -o-box-shadow: 0 0 18px #ccc;
+    -moz-box-shadow: 0 0 18px #ccc;
+    -webkit-box-shadow: 0 0 18px #ccc;
+}
+.login-win .collect{
+    position: absolute;
+    bottom: -36px;
+    right: 62px;
+    color: #666666;
+    text-decoration: none;
+}
+
+.login-win .registerJump{
+    position: absolute;
+    bottom: 22px;
+    font-size: 14px;
+    right: 175px;
+    color: #5096F0;
+    text-decoration: none;
+}
+
+.registerNo{
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    height: 38px;
+    line-height: 16px;
+    color: #636363;
+    text-align: center;
+}
+.registerNo div{
+    width: 314px;
+    margin: 0 auto;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.registerNo span{
+    float: left;
+    font-size: 14px;
+    color: #666;
+    line-height: 16px;
+}
+.registerNo i{
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 19px;
+    background: url("../../../images/pc/login/quickReg.png") no-repeat center;
+}
+
+.serviceNo{
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    line-height: 16px;
+    color: #636363;
+    text-align: center;
+}
+.serviceNo div{
+    width: 314px;
+    margin: 0 auto;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.serviceNo span,.serviceNo em{
+    float: left;
+    font-size: 14px;
+    color: #666;
+    line-height: 16px;
+}
+.serviceNo i{
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 19px;
+    background: url("../../../images/pc/login/sz/login-phone.png") no-repeat center;
+}
+.choice{
+    width: 100%;
+    position: relative;
+    line-height: 1;
+    text-align: center;
+    color:#646464;
+    font-size:16px;
+    margin-top:35px;
+}
+.divide{
+    margin: 0 23px;
+}
+.name,.password,.verify-input,.phonenum{
+    width: 250px;
+    height: 46px;
+    font-size: 14px;
+    color: #666;
+    padding: 0;
+}
+.name-box,.code-box,.phone-box,.verify-code{
+    width: 316px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 10px;
+    position:relative;
+    border-radius: 4px;
+}
+.name-box,.phone-box{
+    padding-left: 44px;
+    background: url("../../../images/pc/login/sz/iconfont-zhanghao.png") no-repeat 12px center;
+    background-size: 19px 20px;
+    -o-background-size: 19px 20px;
+    -moz-background-size: 19px 20px;
+    -webkit-background-size: 19px 20px;
+    box-sizing: border-box;
+}
+.verify-box{
+    padding-left: 44px;
+    background: url("../../../images/pc/login/sz/iconfont-mima.png") no-repeat 14px center;
+    background-size: 15px 20px;
+    -o-background-size: 15px 20px;
+    -moz-background-size: 15px 20px;
+    -webkit-background-size: 15px 20px;
+    box-sizing: border-box;
+}
+.verify-box{
+    width: 150px;
+    border: 1px solid #EDEDED;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    border-radius: 4px;
+}
+/*.touxiang{*/
+    /*display: inline-block;*/
+    /*background: url(../../../images/pc/login/sz/iconfont-zhanghao.png) no-repeat center;*/
+    /*width: 22px;*/
+    /*height: 21px;*/
+    /*margin-left: 12px;*/
+    /*margin-right: 10px;*/
+    /*position: relative;*/
+    /*top: 4px;*/
+/*}*/
+.verify-img{
+    display: inline-block;
+    background: url("../../../images/pc/login/sz/verify-img.png") no-repeat center;
+    width: 22px;
+    height: 26px;
+    margin-left: 12px;
+    margin-right: 10px;
+    position: relative;
+    top: 8px;
+}
+.code-box{
+    padding-left: 44px;
+    background: url("../../../images/pc/login/sz/iconfont-mima.png") no-repeat 14px center;
+    background-size: 15px 20px;
+    -o-background-size: 15px 20px;
+    -moz-background-size: 15px 20px;
+    -webkit-background-size: 15px 20px;
+    box-sizing: border-box;
+}
+/*.code-box .code{*/
+    /*display: inline-block;*/
+    /*width: 22px;*/
+    /*height: 21px;*/
+    /*background: url(../../../images/pc/login/sz/iconfont-mima.png) no-repeat 12px center;*/
+    /*margin-left: 12px;*/
+    /*margin-right: 10px;*/
+    /*position: relative;*/
+    /*top: 4px;*/
+/*}*/
+.remember{
+    text-align: center;
+    color: #666;
+    width: 312px;
+    margin: 0 auto;
+    font-size: 14px;
+    padding-top:10px;
+    position: relative;
+    /*top: 21px;*/
+}
+.clear:after{
+    content: '';
+    height: 0;
+    display: block;
+    clear: both;
+}
+.remember>div{
+    display: inline-block;
+    color:#666;
+}
+.remember>div:nth-of-type(1){
+    float:left;
+}
+.remember>div:nth-of-type(2){
+    float:right;
+}
+.login-btn{
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    background: #4C94F3;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    line-height: 50px;
+    margin-top: 16px;
+    border-radius: 54px;
+    cursor:pointer;
+}
+.tip {
+    color: #8B8B8B;
+    width: 300px;
+    font-size: 12px;
+    margin: 0 auto;
+    margin-top: 17px;
+    line-height: 20px;
+}
+.tab{
+    width: 37px;
+    height: 37px;
+    background: url("../../../images/pc/login/sz/er.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 22px;
+    top: 20px;
+    cursor:pointer;
+}
+.code-type{
+    display:block;
+}
+.erweima-type{
+    position: relative;
+    top: 108px;
+    display:none;
+}
+.erweima-type>div{
+    width: 400px;
+    height: 194px;
+    overflow: hidden;
+}
+.erweima{
+    width: 170px;
+    height: 172px;
+    padding: 10px;
+    border: 1px solid #E7E7E7;
+    position: absolute;
+    left: 25px;
+}
+.phone{
+    width: 160px;
+    height: 200px;
+    background: url("../../../images/pc/login/sz/baier.png") no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 27px;
+    top:-4px;
+}
+.explain{
+    position: absolute;
+    font-size: 16px;
+    color: #666;
+    bottom: 108px;
+    left: 84px;
+    clear: both;
+    width: 265px;
+    display:none;
+}
+.choice>span{
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+.version{
+    color: #20B3DF;
+    font-weight: 600;
+    display: inline-block;
+    height: 54px;
+    line-height: 54px;
+    cursor: pointer;
+}
+.active{
+    color:#3085F7;
+}
+i{
+    font-style: normal;
+}
+.checkbox{
+    cursor:pointer;
+}
+.forget{
+    cursor:pointer;
+}
+.forget a{
+	color: #666;
+	display: inline-block;
+	text-decoration: none;
+}
+.remember-check{
+    background-image: url("../../../images/pc/login/sz/icon_checkbox.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    height: 20px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+.selected {
+    background-image: url("../../../images/pc/login/sz/icon_checkbox_checked.png");
+}
+
+.dynamic-codes-login{
+    margin-bottom:94px;
+    display: none;
+    position:relative;
+}
+.verify-password{
+    width: 88px !important;
+    height: 46px;
+    font-size: 14px;
+    color: #666;
+}
+.get-code{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 153px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    background: #f3f3f3;
+    border-radius: 4px;
+    color: #8D8D8D;
+    border: 1px solid #ddd;
+	cursor: pointer;
+}
+.verify-container{
+    position: relative;
+    width: 316px;
+    margin: 0 auto;
+}
+.phone-tip{
+    position: absolute;
+    bottom: 8px;
+    left: 57px;
+    color: #ff9913;
+    display: none;
+    font-size: 14px;
+}
+.phone-tip>span{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../../../images/pc/login/sz/remind.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 2px;
+    margin-right: 6px;
+}
+.logo-wrap{
+    width: 100%;
+    height: 68px;
+    background: #4c93f2;
+    box-sizing: border-box;
+}
+.logo{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background: url("../../../images/pc/login/sz/login-logo.png") no-repeat center;
+    background-position-x: 52px;
+}
+.login-content{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+.font{
+    width: 77%;
+    top: 44%;
+    left: 16%;
+    position: absolute;
+}
+.font img{
+    width:50%;
+}
+.verify-input{
+    width:140px;
+}
+.get-verifycode{
+    width: 122px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background: #e9e9e9;
+}
+.get-verifycode img{
+   width: 100%;
+   height: 100%;
+}
+.error-tip{
+    position: absolute;
+    padding-left: 56px;
+    bottom: 8px;
+    color: #ff9913;
+    font-size: 14px;
+}
+.error-tip span{
+    color: #ff9913;
+    font-size: 14px;
+}
+.error-tip em{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("../../../images/pc/login/sz/remind.png") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    top: 2px;
+    margin-right: 6px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+.checkbox {
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.css_msg_err {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  vertical-align: middle;
+  background: rgb(255, 255, 255);    /*不支持rgba的浏览器*/
+  background-color: rgba(255, 255, 255, 0.9);  /*支持rgba的浏览器*/
+}
+
+.css_msg_err h6{
+  font-size: 18px;
+  color: #000;
+  margin-top: 47px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+.css_msg_err .css_qrcode_refresh{
+  width: 110px;
+  height: 46px;
+  line-height: 46px;
+  background-color: #ff9913;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  display: inline-block;
+  text-decoration: none
+}
+
+
+.pwd-reset-dialog-bg {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .5;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.5;
+	z-index: 998;
+	display: none;
+}
+
+.pwd-reset-dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	padding: 20px 30px;
+	margin-top: -235px;
+	margin-left: -268px;
+	width: 300px;
+	border: 7px solid #e2e2e2;
+	background: #FFF;
+	z-index: 2001;
+	display: none;
+}
+
+.pwd-form-list {
+	width: 100%;
+	float: left;
+}
+
+.pwd-form-list .title {
+	padding-bottom: 20px;
+	color: #847238;
+	text-align: left;
+	font-size: 15px;
+}
+
+.pwd-form-list input {
+	width: 278px;
+	height: 40px;
+	line-height: 32px;
+	padding: 0 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #d8d8d8;
+	outline: none;
+	margin: 5px 0;
+	float: left;
+}
+
+.pwd-form-list-msg-code {
+	width: 160px !important;
+	padding: 0 10px !important;
+}
+
+.pwd-form-list .newPasswordYzm {
+	width: 110px;
+	height: 40px;
+	border: 1px solid #d8d8d8;
+	margin: 5px 0;
+	cursor: pointer;
+	float: left;
+	margin-left: 5px;
+}
+
+.pwd-reset-btn {
+	width: 298px !important;
+	height: 42px !important;
+	line-height: 42px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "Microsoft Yahei";
+	color: #fff;
+	background: #ff9913;
+	cursor: pointer;
+	display: block;
+	border: none;
+	margin: 0 auto;
+	padding: 0;
+	margin-top: 14px;
+}
+
+.pwd-form-list .pwd-reset-error-msg {
+	padding-bottom: 20px;
+	color: #847238;
+	text-align: left;
+	font-size: 15px;
+}
+
+.pwd-form-list .pwd-reset-error-msg em {
+	float: left;
+	width: 16px;
+	height: 22px;
+	background: url("../../../images/pc/login/validation_icon.png") no-repeat;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 0px;
+	margin-right: 5px;
+}
+
+.pwd-form-list .pwd-reset-error-msg em.success {
+	background-position: -26px 2px;
+}
