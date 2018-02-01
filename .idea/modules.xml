@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mdedical_back_boot/mdedical_back_boot.iml" filepath="$PROJECT_DIR$/mdedical_back_boot/mdedical_back_boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medical.iml" filepath="$PROJECT_DIR$/medical.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medical_back_consumer/medical_back_consumer.iml" filepath="$PROJECT_DIR$/medical_back_consumer/medical_back_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medical_back_provider/medical_back_provider.iml" filepath="$PROJECT_DIR$/medical_back_provider/medical_back_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/medical_util/medical_util.iml" filepath="$PROJECT_DIR$/medical_util/medical_util.iml" />
+    </modules>
+  </component>
+</project>

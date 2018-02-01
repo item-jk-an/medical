@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mdedical_back_boot" />
+        <module name="medical_back_consumer" />
+        <module name="medical_back_provider" />
+        <module name="medical_util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.7">
+      <module name="mdedical_back_boot" target="1.7" />
+      <module name="medical" target="1.7" />
+      <module name="medical_back_consumer" target="1.7" />
+      <module name="medical_back_provider" target="1.7" />
+      <module name="medical_util" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
