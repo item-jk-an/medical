@@ -31,4 +31,8 @@ public interface PowerService {
     void saveOrUpdatePowerInfo(Power power);
 
     void deletePowerInfo(Power power);
+
+    List<Integer> queryPowerIdsByRoleIds(List<Integer> roleIdsList);
+
+    List<Power> queryPowerListByIds(List<Integer> powerIdsList);
 }
