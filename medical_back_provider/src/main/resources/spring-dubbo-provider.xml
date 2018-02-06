@@ -23,10 +23,15 @@
    
    <!-- dubbo端口号 -->  
    <dubbo:protocol name="dubbo" port="20883" ></dubbo:protocol>
-	<!-- 注入实现类 -->
-   <bean id="itemService" class="com.jk.item.service.impl.ItemServiceImpl"></bean>
-   <dubbo:service interface="com.jk.item.service.ItemService" ref="itemService" />
     <!-- 注入实现类 -->
     <bean id="userService" class="com.jk.user.service.impl.UserServiceImpl"></bean>
     <dubbo:service interface="com.jk.user.service.UserService" ref="userService" />
+    <bean id="adminService" class="com.jk.admin.service.impl.AdminServiceImpl"></bean>
+    <dubbo:service interface="com.jk.admin.service.AdminService" ref="adminService" />
+    <bean id="powerService" class="com.jk.power.service.impl.PowerServiceImpl"></bean>
+    <dubbo:service interface="com.jk.power.service.PowerService" ref="powerService" />
+    <bean id="roleService" class="com.jk.role.service.impl.RoleServiceImpl"></bean>
+    <dubbo:service interface="com.jk.role.service.RoleService" ref="roleService" />
+    <bean id="loginService" class="com.jk.login.service.impl.LoginServiceImpl"></bean>
+    <dubbo:service interface="com.jk.login.service.LoginService" ref="loginService" />
  </beans>

@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/mdedical_back_boot" />
     <file type="web" url="file://$PROJECT_DIR$/medical_back_consumer" />
     <file type="web" url="file://$PROJECT_DIR$/medical_back_provider" />
+    <file type="web" url="file://$PROJECT_DIR$/medical_front_provider" />
     <file type="web" url="file://$PROJECT_DIR$/medical_util" />
   </component>
   <component name="MavenProjectsManager">
@@ -11,6 +12,11 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/medical_front_provider/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.7" project-jdk-type="JavaSDK">

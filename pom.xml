@@ -13,6 +13,8 @@
         <module>medical_back_provider</module>
         <module>medical_util</module>
         <module>mdedical_back_boot</module>
+        <module>medical_front_provider</module>
+        <module>medical_front_provicer</module>
     </modules>
     <properties>
         <maven.compiler.source>1.7</maven.compiler.source>

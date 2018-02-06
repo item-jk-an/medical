@@ -3,13 +3,13 @@ package com.jk.login.service;
 import com.jk.admin.pojo.Admin;
 import com.jk.power.pojo.Power;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 public interface LoginService {
 
-	Integer adminLogin(Admin admin, HttpServletRequest request);
+	Map<String,Object> adminLogin(Admin admin);
 
-	List<Power> queryPowerInfo(Integer pid, HttpServletRequest request);
+	List<Power> queryPowerInfo(Integer pid,Admin admin);
 
 }

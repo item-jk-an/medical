@@ -17,6 +17,7 @@
       <module name="medical" target="1.7" />
       <module name="medical_back_consumer" target="1.7" />
       <module name="medical_back_provider" target="1.7" />
+      <module name="medical_front_provider" target="1.7" />
       <module name="medical_util" target="1.7" />
     </bytecodeTargetLevel>
   </component>
