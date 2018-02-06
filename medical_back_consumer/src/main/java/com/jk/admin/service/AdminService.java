@@ -18,4 +18,6 @@ public interface AdminService {
     Map<String,Object> queryAdminShowList(Admin admin, Integer pageSize, Integer start);
 
     void saveRolesOfAdmin(Admin admin, String ids);
+
+    Admin queryAdminInfoByName(String adminMane);
 }
