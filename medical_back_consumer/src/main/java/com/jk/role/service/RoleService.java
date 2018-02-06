@@ -2,6 +2,7 @@ package com.jk.role.service;
 
 import com.jk.role.pojo.Role;
 
+import java.util.List;
 import java.util.Map;
 
 /* 项目名称：medicine_treatment
@@ -24,4 +25,6 @@ public interface RoleService {
     void deleteRole(Role role);
 
     void savePowerToRole(String ids, Role role);
+
+    List<Integer> queryPowerIdsByUserId(Integer userId);
 }
